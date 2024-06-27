@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_26_225435) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_27_073146) do
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
     t.text "body"
@@ -67,25 +67,38 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_26_225435) do
 
   create_table "players", force: :cascade do |t|
     t.integer "jersey_number"
-    t.string "name"
+    t.string "player_name"
+    t.integer "team_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["team_id"], name: "index_players_on_team_id"
+  end
+
+  create_table "players_trophies", id: false, force: :cascade do |t|
+    t.integer "player_id", null: false
+    t.integer "trophy_id", null: false
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.string "team_name"
+    t.string "coach"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "teams", force: :cascade do |t|
-    t.string "player"
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "teams_trophies", id: false, force: :cascade do |t|
+    t.integer "team_id", null: false
+    t.integer "trophy_id", null: false
   end
 
   create_table "trophies", force: :cascade do |t|
     t.integer "year"
-    t.string "name"
+    t.string "trophy_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "players", "teams"
 end
