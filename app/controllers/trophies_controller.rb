@@ -1,6 +1,6 @@
 class TrophiesController < ApplicationController
   def index
-    @trophies = Trophy.all
+    @trophies = Trophy.page(params[:page]).per(10)
   end
 
   def show
