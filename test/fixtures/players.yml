@@ -2,8 +2,10 @@
 
 one:
   jersey_number: 1
-  name: MyString
+  player_name: MyString
+  team: one
 
 two:
   jersey_number: 1
-  name: MyString
+  player_name: MyString
+  team: two
