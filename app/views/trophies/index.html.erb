@@ -1,0 +1,22 @@
+<%# <div>
+  <h1 class="font-bold text-4xl">Trophies#index</h1>
+  <p>Find me in app/views/trophies/index.html.erb</p>
+</div> %>
+
+<h1>Trophies</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th>Trophy Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @trophies.each do |trophy| %>
+      <tr>
+        <td><%= trophy.year %></td>
+        <td><%= trophy.trophy_name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

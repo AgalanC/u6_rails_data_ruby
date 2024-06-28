@@ -1,0 +1,26 @@
+<div>
+  <h1 class="font-bold text-4xl">StaticPages#about</h1>
+
+  <h1>About</h1>
+
+  <p>This application uses synthetic data generated with the Faker gem for the following tables:</p>
+
+  <ul>
+    <li><strong>Player:</strong> Stores information about individual players, including their jersey number, name, and the team they belong to.</li>
+    <li><strong>Team:</strong> Contains details about different teams, including the names of players, team name, and the coach.</li>
+    <li><strong>Trophy:</strong> Records information about various trophies, including the year it was awarded and the name of the trophy.</li>
+  </ul>
+
+  <h2>Entity-Relationship Diagram (ERD)</h2>
+  <p>This ERD represents the relationships between the tables in our database:</p>
+
+  <img src="path/to/your/erd_image.png" alt="ERD Diagram" style="width:100%; max-width:600px;">
+
+  <p>The relationships between these tables are as follows:</p>
+  <ul>
+    <li>Each player can win many trophies, and each trophy can be awarded to many players, establishing a many-to-many relationship between the Player and Trophy tables.</li>
+    <li>Similarly, each team can win many trophies, and each trophy can belong to many teams, creating another many-to-many relationship between the Team and Trophy tables.</li>
+  </ul>
+
+  <p>Find me in app/views/static_pages/about.html.erb</p>
+</div>

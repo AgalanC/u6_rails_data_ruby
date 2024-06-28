@@ -1,0 +1,24 @@
+<%# <div>
+  <h1 class="font-bold text-4xl">Players#index</h1>
+  <p>Find me in app/views/players/index.html.erb</p>
+</div> %>
+
+<h1>Players</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Jersey Number</th>
+      <th>Player Name</th>
+      <th>Team</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @players.each do |player| %>
+      <tr>
+        <td><%= player.jersey_number %></td>
+        <td><%= player.player_name %></td>
+        <td><%= player.team.team_name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
