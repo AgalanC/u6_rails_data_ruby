@@ -8,6 +8,10 @@
 <%= form_with url: teams_path, method: :get, local: true do %>
   <%= label_tag :search, "Search for teams by name:" %>
   <%= text_field_tag :search, params[:search] %>
+
+  <%= label_tag :coach, "Filter by coach:" %>
+  <%= text_field_tag :coach, params[:coach] %>
+
   <%= submit_tag "Search" %>
 <% end %>
 
@@ -31,4 +35,3 @@
 </table>
 
 <%= paginate @teams %>
-

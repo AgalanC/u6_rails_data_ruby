@@ -8,6 +8,10 @@
 <%= form_with url: trophies_path, method: :get, local: true do %>
   <%= label_tag :search, "Search for trophies by name:" %>
   <%= text_field_tag :search, params[:search] %>
+
+  <%= label_tag :year, "Filter by year:" %>
+  <%= select_tag :year, options_for_select((2000..2023).to_a, params[:year]), include_blank: true %>
+
   <%= submit_tag "Search" %>
 <% end %>
 
@@ -31,4 +35,3 @@
 </table>
 
 <%= paginate @trophies %>
-
