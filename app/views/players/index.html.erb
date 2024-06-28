@@ -10,6 +10,7 @@
       <th>Jersey Number</th>
       <th>Player Name</th>
       <th>Team</th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
@@ -18,6 +19,7 @@
         <td><%= player.jersey_number %></td>
         <td><%= player.player_name %></td>
         <td><%= player.team.team_name %></td>
+        <td><%= link_to 'Show', player_path(player) %></td>
       </tr>
     <% end %>
   </tbody>

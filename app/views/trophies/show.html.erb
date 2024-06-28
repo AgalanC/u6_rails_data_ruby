@@ -1,0 +1,15 @@
+<h1>Trophy: <%= @trophy.trophy_name %></h1>
+<p><strong>Year:</strong> <%= @trophy.year %></p>
+<p><strong>Players:</strong></p>
+<ul>
+  <% @trophy.players.each do |player| %>
+    <li><%= link_to player.player_name, player_path(player) %></li>
+  <% end %>
+</ul>
+<p><strong>Teams:</strong></p>
+<ul>
+  <% @trophy.teams.each do |team| %>
+    <li><%= link_to team.team_name, team_path(team) %></li>
+  <% end %>
+</ul>
+<%= link_to 'Back to Trophies', trophies_path %>

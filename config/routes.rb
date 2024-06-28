@@ -39,8 +39,6 @@
 # end
 
 # Rails.application.routes.draw do
-#   get 'trophies/index'
-#   get 'teams/index'
 #   get 'welcome/index'
 
 #   # Add a route for the About page
@@ -70,9 +68,9 @@ Rails.application.routes.draw do
   get 'static_pages/about', to: 'static_pages#about', as: 'about'
 
   # Routes for the index actions
-  resources :players, only: [:index]
-  resources :teams, only: [:index]
-  resources :trophies, only: [:index]
+  resources :players, only: [:index, :show]
+  resources :teams, only: [:index, :show]
+  resources :trophies, only: [:index, :show]
 
   # Devise routes for ActiveAdmin
   devise_for :admin_users, ActiveAdmin::Devise.config

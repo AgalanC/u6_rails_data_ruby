@@ -9,6 +9,7 @@
     <tr>
       <th>Team Name</th>
       <th>Coach</th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
@@ -16,7 +17,9 @@
       <tr>
         <td><%= team.team_name %></td>
         <td><%= team.coach %></td>
+        <td><%= link_to 'Show', team_path(team) %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+

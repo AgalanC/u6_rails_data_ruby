@@ -9,6 +9,7 @@
     <tr>
       <th>Year</th>
       <th>Trophy Name</th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
@@ -16,6 +17,7 @@
       <tr>
         <td><%= trophy.year %></td>
         <td><%= trophy.trophy_name %></td>
+        <td><%= link_to 'Show', trophy_path(trophy) %></td>
       </tr>
     <% end %>
   </tbody>
