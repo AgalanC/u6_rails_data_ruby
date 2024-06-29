@@ -4,4 +4,12 @@ class Team < ApplicationRecord
 
   validates :team_name, presence: true
   validates :coach, presence: true
+
+  def self.ransackable_associations(auth_object = nil)
+    ["players", "trophies"]
+  end
+
+  def self.ransackable_attributes(auth_object = nil)
+    ["coach", "created_at", "id", "id_value", "team_name", "updated_at"]
+  end
 end
