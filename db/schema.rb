@@ -77,6 +77,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_27_073146) do
   create_table "players_trophies", id: false, force: :cascade do |t|
     t.integer "player_id", null: false
     t.integer "trophy_id", null: false
+    t.index ["player_id"], name: "index_players_trophies_on_player_id"
+    t.index ["trophy_id"], name: "index_players_trophies_on_trophy_id"
   end
 
   create_table "teams", force: :cascade do |t|
@@ -89,6 +91,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_27_073146) do
   create_table "teams_trophies", id: false, force: :cascade do |t|
     t.integer "team_id", null: false
     t.integer "trophy_id", null: false
+    t.index ["team_id"], name: "index_teams_trophies_on_team_id"
+    t.index ["trophy_id"], name: "index_teams_trophies_on_trophy_id"
   end
 
   create_table "trophies", force: :cascade do |t|
