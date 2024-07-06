@@ -6,12 +6,23 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
+    <header>
+      <nav class="container mx-auto px-5">
+        <ul class="flex space-x-4">
+          <li><%= link_to 'Home', root_path, class: 'text-blue-500' %></li>
+          <li><%= link_to 'About', about_path, class: 'text-blue-500' %></li>
+          <li><%= link_to 'Players', players_path, class: 'text-blue-500' %></li>
+          <li><%= link_to 'Teams', teams_path, class: 'text-blue-500' %></li>
+          <li><%= link_to 'Trophies', trophies_path, class: 'text-blue-500' %></li>
+        </ul>
+      </nav>
+    </header>
+
     <main class="container mx-auto mt-28 px-5 flex">
       <%= yield %>
     </main>

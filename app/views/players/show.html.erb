@@ -1,0 +1,15 @@
+<h1>Player: <%= @player.player_name %></h1>
+<p><strong>Jersey Number:</strong> <%= @player.jersey_number %></p>
+<p><strong>Team:</strong> <%= link_to @player.team.team_name, team_path(@player.team) %></p>
+<p><strong>Trophies:</strong></p>
+<ul>
+  <% @player.trophies.each do |trophy| %>
+    <li><%= link_to trophy.trophy_name, trophy_path(trophy) %></li>
+  <% end %>
+</ul>
+
+<% if @player.trophies.count == 0 %>
+  <p class="encouragement">Keep working hard and you will become a champion one day!</p>
+<% end %>
+
+<%= link_to 'Back to Players', players_path %>

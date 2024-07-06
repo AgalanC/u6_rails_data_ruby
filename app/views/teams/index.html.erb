@@ -1,0 +1,37 @@
+<%# <div>
+  <h1 class="font-bold text-4xl">Teams#index</h1>
+  <p>Find me in app/views/teams/index.html.erb</p>
+</div> %>
+
+<h1>Teams</h1>
+
+<%= form_with url: teams_path, method: :get, local: true do %>
+  <%= label_tag :search, "Search for teams by name:" %>
+  <%= text_field_tag :search, params[:search] %>
+
+  <%= label_tag :coach, "Filter by coach:" %>
+  <%= text_field_tag :coach, params[:coach] %>
+
+  <%= submit_tag "Search" %>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Team Name</th>
+      <th>Coach</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @teams.each do |team| %>
+      <tr>
+        <td><%= team.team_name %></td>
+        <td><%= team.coach %></td>
+        <td><%= link_to 'Show', team_path(team) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @teams %>

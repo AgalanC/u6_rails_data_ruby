@@ -4,4 +4,8 @@ class Trophy < ApplicationRecord
 
   validates :trophy_name, presence: true
   validates :year, numericality: { only_integer: true }
+
+  def self.ransackable_attributes(auth_object = nil)
+    ["created_at", "id", "id_value", "trophy_name", "updated_at", "year"]
+  end
 end

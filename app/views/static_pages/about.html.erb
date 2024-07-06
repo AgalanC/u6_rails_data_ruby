@@ -1,0 +1,52 @@
+<div>
+  <%# <h1 class="font-bold text-4xl">StaticPages#about</h1> %>
+
+  <h1>About</h1>
+
+  <p>This application uses synthetic data generated with the Faker gem for the following tables:</p>
+
+  <ul>
+    <li><strong>Player:</strong> Stores information about individual players, including their jersey number, name, and the team they belong to.</li>
+    <li><strong>Team:</strong> Contains details about different teams, including the names of players, team name, and the coach.</li>
+    <li><strong>Trophy:</strong> Records information about various trophies, including the year it was awarded and the name of the trophy.</li>
+  </ul>
+
+  <h2>Entity-Relationship Diagram (ERD)</h2>
+  <p>This ERD represents the relationships between the tables in my database:</p>
+
+  <img src="/erd.png" alt="ERD Diagram" style="width:100%; max-width:600px;">
+
+  <p>The relationships between these tables are as follows:</p>
+
+  <h4><strong>Join Tables:</strong></h4>
+  
+  <ul>
+    <li>players_trophies</li>
+    <ul>
+      <li>This join table facilitates the many-to-many relationship between players and trophies. It contains the foreign keys player_id and trophy_id to link players with trophies.</li>
+    </ul>
+    <li>teams_trophies</li>
+    <ul>
+      <li>This join table facilitates the many-to-many relationship between teams and trophies. It contains the foreign keys team_id and trophy_id to link teams with trophies.</li>
+    </ul>
+  </ul>
+
+  <h4><strong>Relationships:</strong></h4>
+
+  <ul>
+    <li>Player-Teams Relationship</li>
+    <ul>
+      <li>One-to-Many: A team can have many players, but each player belongs to one team (Player belongs_to Team, Team has_many Players).</li>
+    </ul>
+    <li>Player-Trophies Relationship</li>
+    <ul>
+      <li>Many-to-Many: A player can win many trophies, and each trophy can be awarded to many players (Player has_and_belongs_to_many Trophies, Trophy has_and_belongs_to_many Players).</li>
+    </ul>
+    <li>Team-Trophies Relationship</li>
+    <ul>
+      <li>Many-to-Many: A team can win many trophies, and each trophy can be awarded to many teams (Team has_and_belongs_to_many Trophies, Trophy has_and_belongs_to_many Teams).</li>
+    </ul>
+  </ul>
+
+  <p>Find me in app/views/static_pages/about.html.erb</p>
+</div>

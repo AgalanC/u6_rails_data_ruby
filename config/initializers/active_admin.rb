@@ -4,6 +4,9 @@ ActiveAdmin.setup do |config|
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.
   #
+
+  # config.comments_menu = false
+
   config.site_title = "U6 Rails Data Ruby"
 
   # Set the link url for the title. For example, to take
